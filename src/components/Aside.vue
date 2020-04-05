@@ -7,9 +7,9 @@
           class="el-menu-vertical-demo"
           @open="handleOpen"
           @close="handleClose"
-          background-color="#fff"
+          background-color="#F56C6C"
           text-color="#000"
-          active-text-color="#f40"
+          active-text-color="#fff"
         >
         <!-- 根据data里的type值，遍历 -->
           <el-menu-item  v-for="(v,k) in type" :key="type[k]" :index="type[k]">
@@ -42,8 +42,17 @@ export default {
         "nodejs",
         "webpack"
       ]
-    };
-  }
+    }
+
+  },
+  methods: {
+      handleOpen(key, keyPath) {
+        console.log(key, keyPath);
+      },
+      handleClose(key, keyPath) {
+        console.log(key, keyPath);
+      }
+    }
 };
 </script>
 
@@ -51,5 +60,8 @@ export default {
 .el-menu-item{
   height: 3em;
   line-height: 3em;
+  font-weight: bold;
 }
+
+
 </style>

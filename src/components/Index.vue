@@ -1,10 +1,11 @@
 <template>
-  <div>
+  <div> 
     <!-- 布局:外围容器container -->
     <el-container class="wrap">
       <el-header>
         <Headers />
       </el-header>
+
       <el-container>
         <el-aside width="150px">
           <Aside />
@@ -50,10 +51,10 @@ export default {
   width: 1140px;
   margin: 0 auto;
 }
-.aside{
-  padding: 0;
+.el-aside{
+  padding: 4px 4px 0 0;
 }
 .el-main{
-  padding: 0;
+  padding: 4px 0;
 }
 </style>

@@ -1,26 +1,21 @@
 <template>
-  <div id="main">
-    <el-collapse v-model="activeNames" @change="handleChange">
-      <el-collapse-item v-for="(v,k) in article" :key="k" :title="article[k].no+article[k].question" :name="article[k]">
-        <div class="answer">{{article[k].Answer}}</div>         
-        <div>{{article[k].eg}}</div>   
-      </el-collapse-item>
-    </el-collapse>
-
+  <div id="main">  
+    <div v-for="(v,k) in articles" :key="articles[k].number" :name="k">
+      <el-link href="#" target="_blank">{{articles[k].question}}</el-link>
+      <br />
+    </div>
   </div>
-
-  
 </template>
 
 <script>
 //导入文章数据
-import article from './article'
+import articles from "./article";
 export default {
   name: "Main",
   data() {
     return {
       activeNames: ["1"],
-      article
+      articles
     };
   },
   methods: {
@@ -32,7 +27,13 @@ export default {
 </script>
 
 <style scoped>
-.answer{
-    text-align: left;
+#main {
+  text-align: left;
+  background-color: #fff;
+  font-size: 16px;
+  padding: 10px;
+}
+#main div{
+  padding-bottom: 1em;
 }
 </style>
