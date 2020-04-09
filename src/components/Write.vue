@@ -1,12 +1,12 @@
 <template>
   <div> 
-    登录页面
+    写文章页面
   </div>
 </template>
 
 <script>
 export default {
-  name: "sign_in",
+  name: "write",
   data() {
     return {
       

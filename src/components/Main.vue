@@ -1,9 +1,11 @@
 <template>
   <div id="main">  
+    <router-view></router-view>
+    <!-- 遍历显示所以文章标题
     <div v-for="(v,k) in articles" :key="articles[k].number" :name="k">
       <el-link href="#" target="_blank">{{articles[k].question}}</el-link>
       <br />
-    </div>
+    </div> -->
   </div>
 </template>
 

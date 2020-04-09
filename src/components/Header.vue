@@ -52,10 +52,11 @@
           v-model="searchKey"
           size="small"
         ></el-input>
-        <el-button type="primary" size="small">搜索</el-button>
+        <el-button type="primary" size="small">搜索</el-button>        
       </el-menu-item>
       <!-- 导航右侧 -->
-      <el-menu-item index="6" class="nav-right one regist" style="border-bottom-color: transparent">
+     <nav>
+        <el-menu-item index="6" class="nav-right one regist" style="border-bottom-color: transparent">
         <!-- <router-link to='./sign_up'>        -->
           <el-button type="danger" size="small">注册</el-button> 
         <!-- </router-link> -->
@@ -63,9 +64,14 @@
       <el-menu-item index="5" class="nav-right two login" style="border-bottom-color: transparent">
         <!-- <router-link to='./sign_in'> -->        
           <el-button type="warning" size="small">登录</el-button>    
-        <!-- </router-link>    -->
-        <router-view></router-view>     
+        <!-- </router-link>    -->  
       </el-menu-item>
+      <el-menu-item index="7" class="nav-right" style="border-bottom-color: transparent">
+        <router-link to='./write'>       
+          <el-button type="primary" size="small">写文章</el-button> 
+        </router-link>
+      </el-menu-item>
+     </nav>
     </el-menu>
   </div>
 </template>

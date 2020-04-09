@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
+import Write from '../components/Write'
 
 Vue.use(Router)
 
@@ -26,6 +26,11 @@ export default new Router({
           <h1>sign_up page</h1>
         `
       }
+    },
+    {
+      path: '/write',
+      name: 'write',
+      component: Write
     }
   ]
 })
