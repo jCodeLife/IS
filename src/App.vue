@@ -25,5 +25,6 @@ export default {
 body{
   margin: 0;
   background: linear-gradient(skyblue,#fff) no-repeat;
+  height: 100%;
 }
 </style>

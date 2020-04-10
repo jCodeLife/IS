@@ -108,6 +108,7 @@ export default {
 
 .el-container {
   width: 1140px;
+  /* width: 100%; */
   margin: 0 auto;
 }
 body > .el-container {
