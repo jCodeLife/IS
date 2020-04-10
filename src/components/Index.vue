@@ -49,13 +49,18 @@ export default {
 
 .wrap {
   width: 1140px;
-  /* width: 100%; */
   margin: 0 auto;
+  height:100vh;
+
 }
 .el-aside{
-  padding: 10px 10px 0 0;
+  margin: 10px 10px 0 0;
+  height:90vh;
+  overflow: scroll;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .5);
 }
 .el-main{
-  padding: 10px 0;
+  margin: 10px 0;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .5)
 }
 </style>

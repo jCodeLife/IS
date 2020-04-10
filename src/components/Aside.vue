@@ -7,9 +7,9 @@
           class="el-menu-vertical-demo"
           @open="handleOpen"
           @close="handleClose"
-          background-color="#F56C6C"
+          background-color="#fff"
           text-color="#000"
-          active-text-color="#fff"
+          active-text-color="#f40"
         >
         <!-- 根据data里的type值，遍历 -->
           <el-menu-item  v-for="(v,k) in type" :key="type[k]" :index="type[k]">
@@ -40,7 +40,19 @@ export default {
         "NPM",
         "GIT",
         "nodejs",
-        "webpack"
+        "webpack",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "CSS3",
+        "HTML5",
+        "jQuery",
+        "Bootstrap",
+        "ES6",
+        "Vue",
+        "NPM",
+        "GIT",
+        "nodejs",
       ]
     }
 
@@ -60,7 +72,7 @@ export default {
 .el-menu-item{
   height: 3em;
   line-height: 3em;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 

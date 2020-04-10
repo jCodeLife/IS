@@ -22,9 +22,9 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
-body{
+html,body{
   margin: 0;
   background: linear-gradient(skyblue,#fff) no-repeat;
-  height: 100%;
+  height:100vh;
 }
 </style>
