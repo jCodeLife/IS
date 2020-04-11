@@ -2,11 +2,12 @@
   <div> 
     <!-- 布局:外围容器container -->
     <el-container class="wrap">
+      <!-- 头部 -->
       <el-header>
         <Headers />
       </el-header>
-
       <el-container>
+        <!-- 侧栏 -->
         <el-aside width="150px">
           <Aside />
         </el-aside>
@@ -56,11 +57,12 @@ export default {
 .el-aside{
   margin: 10px 10px 0 0;
   height:90vh;
-  overflow: scroll;
-  box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+  /* overflow: scroll; */
+  box-shadow: 0 0 5px rgba(0, 0, 0, .3);
 }
 .el-main{
+  height:90vh;
   margin: 10px 0;
-  box-shadow: 0 0 5px rgba(0, 0, 0, .5)
+  box-shadow: 0 0 5px rgba(0, 0, 0, .3);
 }
 </style>

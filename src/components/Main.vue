@@ -34,8 +34,7 @@ export default {
   background-color: #fff;
   font-size: 16px;
   padding: 10px;
+  border-radius: 4px;
 }
-#main div{
-  padding-bottom: 1em;
-}
+
 </style>

@@ -1,79 +1,165 @@
 <template>
   <div id="aside">
-    <el-row class="tac">
-      <el-col :span="24">
-        <el-menu
-          default-active="2"
-          class="el-menu-vertical-demo"
-          @open="handleOpen"
-          @close="handleClose"
-          background-color="#fff"
-          text-color="#000"
-          active-text-color="#f40"
-        >
-        <!-- 根据data里的type值，遍历 -->
-          <el-menu-item  v-for="(v,k) in type" :key="type[k]" :index="type[k]">
-            <span slot="title">{{v}}</span>
-          </el-menu-item>
-        </el-menu>
-      </el-col>
-    </el-row>
+    <el-input placeholder="输入关键字进行过滤" v-model="filterText" size="mini" class="search"></el-input>
+    <el-tree
+      class="type-tree"
+      :data="data"
+      :props="defaultProps"
+      default-expand-all
+      :filter-node-method="filterNode"
+      ref="tree"
+    ></el-tree>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Aside",
+  watch: {
+    filterText(val) {
+      this.$refs.tree.filter(val);
+    }
+  },
+
+  methods: {
+    filterNode(value, data) {
+      if (!value) return true;
+      return data.label.indexOf(value) !== -1;
+    }
+  },
+
   data() {
     return {
-      // type：分类
-      type: [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "CSS3",
-        "HTML5",
-        "jQuery",
-        "Bootstrap",
-        "ES6",
-        "Vue",
-        "NPM",
-        "GIT",
-        "nodejs",
-        "webpack",
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "CSS3",
-        "HTML5",
-        "jQuery",
-        "Bootstrap",
-        "ES6",
-        "Vue",
-        "NPM",
-        "GIT",
-        "nodejs",
-      ]
-    }
-
-  },
-  methods: {
-      handleOpen(key, keyPath) {
-        console.log(key, keyPath);
-      },
-      handleClose(key, keyPath) {
-        console.log(key, keyPath);
+      filterText: "",
+      data: [
+        {
+          id: 1,
+          label: "HTML",
+          children: [
+            {
+              id: 4,
+              label: "常用标签",
+            }
+          ]
+        },
+        {
+          id: 2,
+          label: "CSS",
+          children: [
+            {
+              id: 5,
+              label: "选择器"
+            },
+            {
+              id: 6,
+              label: "布局"
+            }
+          ]
+        },
+        {
+          id: 3,
+          label: "JavaScript",
+          children: [
+            {
+              id: 7,
+              label: "ECMAScript"
+            },
+            {
+              id: 8,
+              label: "BOM"
+            }
+          ]
+        },
+        {
+          id: 1,
+          label: "HTML",
+          children: [
+            {
+              id: 4,
+              label: "常用标签",
+            }
+          ]
+        },
+        {
+          id: 2,
+          label: "CSS",
+          children: [
+            {
+              id: 5,
+              label: "选择器"
+            },
+            {
+              id: 6,
+              label: "布局"
+            }
+          ]
+        },
+        {
+          id: 3,
+          label: "JavaScript",
+          children: [
+            {
+              id: 7,
+              label: "ECMAScript"
+            },
+            {
+              id: 8,
+              label: "BOM"
+            }
+          ]
+        },
+        {
+          id: 1,
+          label: "HTML",
+          children: [
+            {
+              id: 4,
+              label: "常用标签",
+            }
+          ]
+        },
+        {
+          id: 2,
+          label: "CSS",
+          children: [
+            {
+              id: 5,
+              label: "选择器"
+            },
+            {
+              id: 6,
+              label: "布局"
+            }
+          ]
+        },
+        {
+          id: 3,
+          label: "JavaScript",
+          children: [
+            {
+              id: 7,
+              label: "ECMAScript"
+            },
+            {
+              id: 8,
+              label: "BOM"
+            }
+          ]
+        }
+      ],
+      defaultProps: {
+        children: "children",
+        label: "label"
       }
-    }
+    };
+  }
 };
 </script>
 
 <style scoped>
-.el-menu-item{
-  height: 3em;
-  line-height: 3em;
-  /* font-weight: bold; */
+.search {
+  padding:4px 0;
 }
-
-
+.type-tree{
+  margin: 0 4px;
+}
 </style>
